@@ -86,6 +86,10 @@ int main () {
 			}
 			check = 0;
 		}
+		if(X.length() == 5){
+			cout << "Draw" << endl;
+			return 0;
+		}
 	}
 
 	return 0;
