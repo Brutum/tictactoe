@@ -11,7 +11,7 @@ bool Game::check_move(unsigned int row, unsigned int col) {
     return board[row * 3 + col] == Game::NONE;
 }
 
-Player Game::check_win() {
+Game::Player Game::check_win() {
     for (int i = 0; i < 3; i++) {
         if (board[i * 3] != Game::NONE && board[i * 3] == board[i * 3 + 1] && board[i * 3 + 1] == board[i * 3 + 2]) {
             return board[i * 3];
@@ -31,17 +31,17 @@ Player Game::check_win() {
     return Game::NONE;
 }
 
-Player Game::get_board(unsigned int row, unsigned int col) {
-    return board[row * 3 + col]; 
+Game::Player Game::get_board(unsigned int row, unsigned int col) {
+    return board[row * 3 + col];
 }
 
-Player Game::get_current_player() {
+Game::Player Game::get_current_player() {
     return turn;
 }
 
 void Game::make_move(unsigned int row, unsigned int col) {
     if (check_move(row, col)) {
-        board[row * 3 + col] = get_current_player;
+        board[row * 3 + col] = turn;
         if (turn == Game::X) {
             turn = Game::O;
         }
