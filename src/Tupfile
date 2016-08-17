@@ -1,0 +1,7 @@
+include_rules
+
+CXXFLAGS += -I../include
+
+.gitignore
+
+: foreach *.cpp |> g++ $(CXXFLAGS) -c %f -o %o |> %B.o ../<objs>

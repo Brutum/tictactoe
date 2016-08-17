@@ -1,0 +1,4 @@
+CXXFLAGS += -Wall
+CXXFLAGS += -Wextra
+CXXFLAGS += -Wpedantic
+CXXFLAGS += -std=c++11

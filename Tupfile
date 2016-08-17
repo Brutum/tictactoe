@@ -1,0 +1,11 @@
+include_rules
+
+.gitignore
+
+ifeq (@(TUP_PLATFORM),win32)
+    TARGET = tictactoe.exe
+else
+    TARGET = tictactoe
+endif
+
+: <objs> |> g++ $(CXXFLAGS) %<objs> -o %o |> $(TARGET)
